@@ -80,7 +80,6 @@ void solve_linear(const double b, const double c) {
         double x = -c / b;
         cout << "x = " << x << endl;
         
-        // Проверка решения
         double check = b * x + c;
         cout << "Check: " << b << " * " << x << " + " << c << " = " << check << endl;
     }
@@ -92,24 +91,21 @@ void check_real_roots(const double a, const double b, const double c, const doub
     double check2 = a * x2 * x2 + b * x2 + c;
     
     cout << "Checking roots:" << endl;
-    cout << "x1 = " << x1 << ": " << check1 << endl;
-    cout << "x2 = " << x2 << ": " << check2 << endl;
-    
     if (abs(check1) > numeric_limits<double>::epsilon() || abs(check2) > numeric_limits<double>
     ::epsilon()) {
         cout << "Error with calculate" << endl;
     }
+    cout << "   Success!" << endl;
 }
 
 void check_single_root(const double a, const double b, const double c, const double x) {
     double check = a * x * x + b * x + c;
     
     cout << "Checking root:" << endl;
-    cout << "x = " << x << ": " << check << endl;
-    
     if (abs(check) > numeric_limits<double>::epsilon()) {
         cout << "Error with calculate" << endl;
     }
+    cout << "   Success!" << endl;
 }
 
 void check_complex_roots(const double a, const double b, const double c, const double re, 
