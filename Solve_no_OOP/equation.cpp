@@ -39,9 +39,9 @@ void print_equation(const double a, const double b, const double c) {
     cout << "Equation: ";
     
     if (a != 0) {
-        if (a == 1) cout << "x²";
-        else if (a == -1) cout << "-x²";
-        else cout << a << "x²";
+        if (a == 1) cout << "x^2";
+        else if (a == -1) cout << "-x^2";
+        else cout << a << "x^2";
     }
     
     if (b > 0) {
