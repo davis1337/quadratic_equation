@@ -92,8 +92,8 @@ void check_real_roots(const double a, const double b, const double c, const doub
     double check2 = a * x2 * x2 + b * x2 + c;
     
     cout << "Checking roots:" << endl;
-    cout << "   x1 = " << x1 << ": " << check1 << endl;
-    cout << "   x2 = " << x2 << ": " << check2 << endl;
+    cout << "x1 = " << x1 << ": " << check1 << endl;
+    cout << "x2 = " << x2 << ": " << check2 << endl;
     
     if (abs(check1) > numeric_limits<double>::epsilon() || abs(check2) > numeric_limits<double>
     ::epsilon()) {
@@ -105,7 +105,7 @@ void check_single_root(const double a, const double b, const double c, const dou
     double check = a * x * x + b * x + c;
     
     cout << "Checking root:" << endl;
-    cout << "   x = " << x << ": " << check << endl;
+    cout << "x = " << x << ": " << check << endl;
     
     if (abs(check) > numeric_limits<double>::epsilon()) {
         cout << "Error with calculate" << endl;
@@ -148,8 +148,8 @@ void solve_quadratic(const double a, const double b, const double c) {
         cout << "Discriminant < 0 => The equation has complex roots:" << endl;
         double re = -b / (2 * a);
         double im = sqrt(-discriminant) / (2 * a);
-        cout << "x₁ = " << re << " + " << im << "i" << endl;
-        cout << "x₂ = " << re << " - " << im << "i" << endl;
+        cout << "x1 = " << re << " + " << im << "i" << endl;
+        cout << "x2 = " << re << " - " << im << "i" << endl;
         
         check_complex_roots(a, b, c, re, im);
     }
