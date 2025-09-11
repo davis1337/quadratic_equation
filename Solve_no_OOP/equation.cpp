@@ -93,7 +93,7 @@ void check_real_roots(const double a, const double b, const double c, const doub
     cout << "Checking roots:" << endl;
     if (abs(check1) > numeric_limits<double>::epsilon() || abs(check2) > numeric_limits<double>
     ::epsilon()) {
-        cout << "Error with calculate" << endl;
+        cout << "Error with calculate!" << endl;
     }
     cout << "   Success!" << endl;
 }
@@ -103,7 +103,7 @@ void check_single_root(const double a, const double b, const double c, const dou
     
     cout << "Checking root:" << endl;
     if (abs(check) > numeric_limits<double>::epsilon()) {
-        cout << "Error with calculate" << endl;
+        cout << "Error with calculate!" << endl;
     }
     cout << "   Success!" << endl;
 }
@@ -111,11 +111,15 @@ void check_single_root(const double a, const double b, const double c, const dou
 void check_complex_roots(const double a, const double b, const double c, const double re, 
     const double im) {
     
-    double real_part = a * (re*re - im*im) + b * re + c;
-    double imaginary_part = 2 * a * re * im + b * im;
+    double temp_eq = a * (re * re + im * im) + b * (re + im) + c;
+    double temp2_eq = a * (re * re - im * im) + b * (re - im) + c;
     
     cout << "Checking complex roots:" << endl;
-    /* ТУТ ДОЛЖНА БЫТЬ ПРОВЕРКА КОМПЛЕКСНЫХ КОРНЕЙ */
+    if (abs(temp_eq) < numeric_limits<double>::epsilon()) {
+        cout << "   Success!" << endl;
+    } else {
+        cout << "Error with calculate!" << endl;
+    }
 }
 
 void solve_quadratic(const double a, const double b, const double c) {
