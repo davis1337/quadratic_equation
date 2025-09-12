@@ -138,11 +138,14 @@ void solve_quadratic(const double a, const double b, const double c) {
         check_real_roots(a, b, c, x1, x2);
         
     } else if (discriminant == 0) {
-        cout << "Discriminant = 0 => The equation has 1 root:" << endl;
-        double x = -b / (2 * a);
-        cout << "x = " << x << endl;
+        cout << "Discriminant = 0 => The equation has 2 roots:" << endl;
+        double x1 = -b / (2 * a);
+        double x2 = x1;
+        cout << "x1 = " << x1 << endl;
+        cout << "x2 = " << x2 << endl;
         
-        check_single_root(a, b, c, x);
+        check_single_root(a, b, c, x1);
+        check_single_root(a, b, c, x2);
         
     } else {
         cout << "Discriminant < 0 => The equation has complex roots:" << endl;
