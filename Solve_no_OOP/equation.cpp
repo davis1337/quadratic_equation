@@ -111,11 +111,12 @@ void check_single_root(const double a, const double b, const double c, const dou
 void check_complex_roots(const double a, const double b, const double c, const double re, 
     const double im) {
     
-    double temp_eq = a * (re * re + im * im) + b * (re + im) + c;
-    double temp2_eq = a * (re * re - im * im) + b * (re - im) + c;
-    
+    double real_part = a * (re * re - im * im) + b * re + c; // Т.к Re x^2 = re^2 - im^2
+    double imag_part = 2 * a * re * im + b * im; // Т.к Im x^2 = 2*re*im
+
     cout << "Checking complex roots:" << endl;
-    if (abs(temp_eq) < numeric_limits<double>::epsilon()) {
+    if (abs(real_part) < numeric_limits<double>::epsilon() && 
+        abs(imag_part) < numeric_limits<double>::epsilon()) {
         cout << "   Success!" << endl;
     } else {
         cout << "Error with calculate!" << endl;
